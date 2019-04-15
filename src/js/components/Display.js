@@ -12,7 +12,7 @@ const Display = (props) => {
 };
 
 Display.propTypes = {
-  displayArgs: PropTypes.object.isRequired,
+  displayArgs: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default Display;
