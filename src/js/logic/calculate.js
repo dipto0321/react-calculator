@@ -1,6 +1,6 @@
 import operate from './operate';
 
-const appendChar = (currentVal, input, priorInput) => (currentVal === null ? (input !== '0' || priorInput !== null ? input : null) : currentVal + input);
+const appendChar = (currentVal, input) => (currentVal === null || currentVal === '0' ? input : currentVal + input);
 
 export default (dataObj, btn) => {
   let {
@@ -8,7 +8,7 @@ export default (dataObj, btn) => {
   } = dataObj;
   if (!isNaN(btn) || btn === '.') {
     finished = false;
-    operation === null ? (total = appendChar(total, btn, null)) : (next = appendChar(next, btn, total));
+    operation === null ? (total = appendChar(total, btn)) : (next = appendChar(next, btn));
   } else if (!['=', 'AC', '+/-', '%', '.'].includes(btn)) {
     finished = false;
     if (next === null) {
