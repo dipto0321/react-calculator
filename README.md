@@ -95,7 +95,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 
 ## Maintainers
 
-[@ryto](https://github.com/ryto)
+[Ryan](https://github.com/rvvergara) and [Dipto](https://github.com/dipto0321)
+
 
 ## Contributing
 
@@ -107,4 +108,4 @@ PRs accepted.
 
 ## License
 
-MIT © 2019 ryto
+MIT © 2019 Ryan and Dipto
