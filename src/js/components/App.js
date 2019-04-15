@@ -11,6 +11,7 @@ class App extends Component {
     error: null,
     finished: false,
   };
+
   handleClick = btn => {
     this.setState(prevState => {
       const dataObj = Object.assign(prevState);

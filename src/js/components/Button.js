@@ -9,12 +9,8 @@ const Button = (props) => {
   const wideClass = wide ? `${colorClass} wide-class` : `${colorClass}`;
 
   return (
-    <div
-      className={wideClass}
-      onClick={() => handleClick(name)}
-    >
+    <div className={wideClass} onClick={() => handleClick(name)}>
       {name}
-
     </div>
   );
 };
