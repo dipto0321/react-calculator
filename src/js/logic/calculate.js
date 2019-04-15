@@ -1,6 +1,6 @@
 import operate from './operate';
 
-const appendChar = (currentVal, input) => (currentVal === null ? (input !== '0' ? input : null) : currentVal + input);
+const appendChar = (currentVal, input) => (currentVal === null ? input : currentVal + input);
 
 export default (dataObj, btn) => {
   let {
@@ -19,6 +19,10 @@ export default (dataObj, btn) => {
         total = res;
       } catch (err) {
         error = 'Err';
+        next = null;
+        operation = null;
+        total = null;
+        finished = true;
       }
     }
   } else if (btn === '=') {
@@ -31,6 +35,10 @@ export default (dataObj, btn) => {
         finished = true;
       } catch (err) {
         error = 'Err';
+        next = null;
+        operation = null;
+        total = null;
+        finished = true;
       }
     }
   } else if (btn === 'AC') {
