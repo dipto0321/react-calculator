@@ -1,16 +1,27 @@
 import Big from 'big.js';
 
-const opers = {
-  '+': 'plus',
-  '-': 'minus',
-  x: 'times',
-  '/': 'div',
-  '%': 'mod',
-};
-
-export default (numberOne, numberTwo, operation) => {
+const operate = (numberOne, numberTwo, operation) => {
   const x = Big(numberOne);
   const y = Big(numberTwo);
-  const oper = opers[operation];
-  return x[oper](y);
+  let res;
+  switch (operation) {
+    case '+':
+      res = Number(x.plus(y).toString());
+      break;
+    case '-':
+      res = Number(x.minus(y).toString());
+      break;
+    case 'X':
+      res = Number(x.times(y).toString());
+      break;
+    case '/':
+      res = Number(x.div(y).toString());
+      break;
+    default:
+      res = null;
+      break;
+  }
+  return res;
 };
+
+export default operate;
