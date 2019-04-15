@@ -44,10 +44,13 @@ export default (dataObj, btn) => {
     }
   } else if (btn === '%') {
     finished = false;
-    if (next) {
-      next /= 100;
-    } else {
-      total /= 100;
+    if (operation !== '%') {
+      operation = btn;
+      if (next) {
+        next /= 100;
+      } else {
+        total /= 100;
+      }
     }
   }
 
