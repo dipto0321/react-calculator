@@ -18,7 +18,7 @@ export default (dataObj, btn) => {
         const res = operate(total, next, operation);
         total = res;
       } catch (err) {
-        error = 'Cannot do that sorry';
+        error = 'Err';
       }
     }
   } else if (btn === '=') {
@@ -30,7 +30,7 @@ export default (dataObj, btn) => {
         error = null;
         finished = true;
       } catch (err) {
-        error = "Don't do that , it's bad";
+        error = 'Err';
       }
     }
   } else if (btn === 'AC') {
