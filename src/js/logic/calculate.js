@@ -4,7 +4,7 @@ const appendChar = (currentVal, input) => (currentVal === null ? input : current
 
 export default (dataObj, btn) => {
   let {
-    total, next, operation, error,
+    total, next, operation, error, finished,
   } = dataObj;
   if (!isNaN(btn)) {
     operation === null ? (total = appendChar(total, btn)) : (next = appendChar(next, btn));
@@ -24,6 +24,7 @@ export default (dataObj, btn) => {
     operation = null;
     next = null;
     error = null;
+    finished = true;
   } else if (btn === 'AC') {
     total = null;
     next = null;
@@ -36,5 +37,6 @@ export default (dataObj, btn) => {
     next,
     operation,
     error,
+    finished,
   };
 };

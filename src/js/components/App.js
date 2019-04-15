@@ -9,9 +9,13 @@ class App extends Component {
     next: null,
     operation: null,
     error: null,
+    finished: false,
   };
   handleClick = btn => {
-    this.setState(prevState => calculate(prevState, btn));
+    this.setState(prevState => {
+      const dataObj = Object.assign(prevState);
+      if(prevState.finished) dataObj.total = null;
+      return calculate(dataObj, btn)});
   };
 
   render() {
