@@ -8,18 +8,19 @@ class App extends Component {
     total: null,
     next: null,
     operation: null,
+    error: null,
   };
   handleClick = btn => {
     this.setState(prevState => calculate(prevState, btn));
   };
 
   render() {
-    const { total, next, operation } = this.state;
+    const { total, next, error } = this.state;
     return (
       <div className="App">
         <div className="container">
           <Display
-            display={next === null ? total : next}
+            display={error === null ? (next === null ? total : next) : error}
           />
           <ButtonPanel handleClick={this.handleClick} />
         </div>
