@@ -1,9 +1,36 @@
 import React, { Component } from 'react';
-import '../../css/components/App.scss';
+import Display from './Display';
+import ButtonPanel from './ButtonPanel';
+import calculate from '../logic/calculate';
 
 class App extends Component {
+  state = {
+    total: null,
+    next: null,
+    operation: null,
+    error: null,
+    finished: false,
+  };
+
+  handleClick = btn => {
+    this.setState(prevState => {
+      const dataObj = Object.assign(prevState);
+      if (prevState.finished && (!isNaN(btn)|| btn === '.')) dataObj.total = null;
+      if (prevState.error) dataObj.error = null;
+      return calculate(dataObj, btn);
+    });
+  };
+
   render() {
-    return <div className="App" />;
+    const { total, next, error } = this.state;
+    return (
+      <div className="App">
+        <div className="container">
+          <Display displayArgs={{ total, next, error }} />
+          <ButtonPanel handleClick={this.handleClick} />
+        </div>
+      </div>
+    );
   }
 }
 
