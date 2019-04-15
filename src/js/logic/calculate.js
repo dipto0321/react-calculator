@@ -6,10 +6,10 @@ export default (dataObj, btn) => {
   let {
     total, next, operation, error, finished,
   } = dataObj;
-  if (!isNaN(btn)) {
+  if (!isNaN(btn) || btn === '.') {
     finished = false;
     operation === null ? (total = appendChar(total, btn)) : (next = appendChar(next, btn));
-  } else if (btn !== '=' && btn !== 'AC' && btn !== '+/-' && btn !== '%') {
+  } else if (btn !== '=' && btn !== 'AC' && btn !== '+/-' && btn !== '%' && btn !== '.') {
     finished = false;
     if (next === null) {
       if (total !== null) operation = btn;
