@@ -15,7 +15,7 @@ class App extends Component {
   handleClick = btn => {
     this.setState(prevState => {
       const dataObj = Object.assign(prevState);
-      if (prevState.finished && !isNaN(btn)) dataObj.total = null;
+      if (prevState.finished && (!isNaN(btn)|| btn === '.')) dataObj.total = null;
       if (prevState.error) dataObj.error = null;
       return calculate(dataObj, btn);
     });
