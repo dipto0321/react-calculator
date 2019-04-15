@@ -1,6 +1,6 @@
 import operate from './operate';
 
-const appendChar = (currentVal, input) => (currentVal === null ? input : currentVal + input);
+const appendChar = (currentVal, input) => (currentVal === null ? (input !== '0' ? input : null) : currentVal + input);
 
 export default (dataObj, btn) => {
   let {
