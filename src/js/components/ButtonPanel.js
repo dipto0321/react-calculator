@@ -11,23 +11,18 @@ const ButtonPanel = (props) => {
 
   return (
     <div id="button-panel">
-      {
-        rows.map(row => (
-          <div
-            className="row"
-            key={row}
-          >
-            {
-              row.map(char => (
-                <Button
-                  key={char}
-                  name={char}
-                />
-              ))
-            }
-          </div>
-        ))
-      }
+      {rows.map(row => (
+        <div className="row" key={row}>
+          {row.map(char => (
+            <Button
+              key={char}
+              name={char}
+              color={['+', '-', 'X', '/', '='].includes(char)}
+              wide={char === 0}
+            />
+          ))}
+        </div>
+      ))}
     </div>
   );
 };
