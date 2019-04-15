@@ -23,8 +23,8 @@ export default (dataObj, btn) => {
     }
   } else if (btn === '=') {
     if (!!total && !!next) {
-      try { 
-total = operate(total, next, operation);
+      try {
+        total = operate(total, next, operation);
         operation = null;
         next = null;
         error = null;
