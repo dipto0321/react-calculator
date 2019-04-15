@@ -20,9 +20,9 @@ const ButtonPanel = (props) => {
             {
               row.map(char => (
                 <Button
-                 key={char}
-                 name={char}
-               />
+                  key={char}
+                  name={char}
+                />
               ))
             }
           </div>

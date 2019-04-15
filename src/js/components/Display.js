@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Display = (props) => (
-    <div id="display">
+const Display = () => (
+  <div id="display">
       Display Component Here
-    </div>
-  );
+  </div>
+);
 
 export default Display;
