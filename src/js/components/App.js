@@ -14,8 +14,9 @@ class App extends Component {
   handleClick = btn => {
     this.setState(prevState => {
       const dataObj = Object.assign(prevState);
-      if(prevState.finished) dataObj.total = null;
-      return calculate(dataObj, btn)});
+      if (prevState.finished && !isNaN(btn)) dataObj.total = null;
+      return calculate(dataObj, btn);
+    });
   };
 
   render() {
@@ -23,9 +24,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <Display
-            display={error === null ? (next === null ? total : next) : error}
-          />
+          <Display display={error === null ? (next === null ? total : next) : error} />
           <ButtonPanel handleClick={this.handleClick} />
         </div>
       </div>
