@@ -9,7 +9,7 @@ export default (dataObj, btn) => {
   if (!isNaN(btn) || btn === '.') {
     finished = false;
     operation === null ? (total = appendChar(total, btn)) : (next = appendChar(next, btn));
-  } else if (btn !== '=' && btn !== 'AC' && btn !== '+/-' && btn !== '%' && btn !== '.') {
+  } else if (!['=', 'AC', '+/-', '%', '.'].includes(btn)) {
     finished = false;
     if (next === null) {
       if (total !== null) operation = btn;
