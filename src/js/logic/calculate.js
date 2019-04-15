@@ -8,7 +8,7 @@ export default (dataObj, btn) => {
   } = dataObj;
   if (!isNaN(btn)) {
     operation === null ? (total = appendChar(total, btn)) : (next = appendChar(next, btn));
-  } else if (btn !== '=') {
+  } else if (btn !== '=' && btn !== 'AC') {
     if (next === null) {
       operation = btn;
     } else {
@@ -23,6 +23,11 @@ export default (dataObj, btn) => {
     total = operate(total, next, operation);
     operation = null;
     next = null;
+    error = null;
+  } else if (btn === 'AC') {
+    total = null;
+    next = null;
+    operation = null;
     error = null;
   }
 
