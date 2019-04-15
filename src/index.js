@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/styles.scss';
-import Big from 'big.js';
 import App from './js/components/App';
 import * as serviceWorker from './serviceWorker';
 
@@ -11,11 +10,4 @@ ReactDOM.render(<App />, document.getElementById('root'));
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 
-console.log(
-  Number(
-    Big(0.1)
-      .plus(Big(0.2))
-      .toString(),
-  ),
-);
 serviceWorker.unregister();
