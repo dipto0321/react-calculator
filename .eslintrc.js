@@ -24,5 +24,7 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 0,
     'react/destructuring-assignment': 0,
     'no-nested-ternary': 0,
+    'no-unused-expressions': 0,
+    'no-restricted-globals': 0,
   },
 };
