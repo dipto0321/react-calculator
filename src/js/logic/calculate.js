@@ -23,11 +23,15 @@ export default (dataObj, btn) => {
     }
   } else if (btn === '=') {
     if (!!total && !!next) {
-      total = operate(total, next, operation);
-      operation = null;
-      next = null;
-      error = null;
-      finished = true;
+      try { 
+total = operate(total, next, operation);
+        operation = null;
+        next = null;
+        error = null;
+        finished = true;
+      } catch (err) {
+        error = "Don't do that , it's bad";
+      }
     }
   } else if (btn === 'AC') {
     total = null;
