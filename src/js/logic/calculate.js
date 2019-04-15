@@ -12,7 +12,7 @@ export default (dataObj, btn) => {
   } else if (btn !== '=' && btn !== 'AC') {
     finished = false;
     if (next === null) {
-      operation = btn;
+      if (total !== null) operation = btn;
     } else {
       try {
         const res = operate(total, next, operation);
