@@ -4,13 +4,30 @@ import ButtonPanel from './ButtonPanel';
 
 class App extends Component {
   state = {
-
+    total: null,
+    next: null,
+    operation: null,
   };
+  handleClick = (btn) => {
+    this.setState(() => ({
+      total: btn
+    }));
+  }
+
   render() {
+    const {
+      total,
+      next,
+      operation
+    } = this.state;
     return <div className="App">
       <div className="container">
-        <Display/>
-        <ButtonPanel/>
+        <Display
+          total={total}
+        />
+        <ButtonPanel
+          handleClick={this.handleClick}
+        />
       </div>
     </div>;
   }

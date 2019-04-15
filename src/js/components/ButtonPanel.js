@@ -2,6 +2,9 @@ import React from 'react';
 import Button from './Button';
 
 const ButtonPanel = (props) => {
+  const {
+    handleClick,
+  } = props;
   const firstrowChars = ['AC', '+/-', '%', '/'];
   const secondRowChars = [7, 8, 9, 'X'];
   const thirdRowChars = [4, 5, 6, '-'];
@@ -19,6 +22,7 @@ const ButtonPanel = (props) => {
               name={char}
               color={['+', '-', 'X', '/', '='].includes(char)}
               wide={char === 0}
+              handleClick={handleClick}
             />
           ))}
         </div>
