@@ -25,7 +25,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <Display display={error === null ? (next === null ? total : next) : error} />
+          <Display displayArgs={{ total, next, error }} />
           <ButtonPanel handleClick={this.handleClick} />
         </div>
       </div>
