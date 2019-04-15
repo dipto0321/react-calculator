@@ -2,11 +2,11 @@ import React from 'react';
 
 const Display = (props) => {
   const {
-    total,
+    display,
   } = props;
   return (
     <div className="display">
-      {total}
+      {display}
     </div>
   );
 };

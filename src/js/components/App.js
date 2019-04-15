@@ -18,7 +18,9 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <Display total={total} />
+          <Display
+            display={next === null ? total : next}
+          />
           <ButtonPanel handleClick={this.handleClick} />
         </div>
       </div>
