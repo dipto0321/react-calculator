@@ -1,0 +1,29 @@
+.btn {
+  background: $off-white;
+  color: $dark-grey;
+  display: flex;
+  flex: 1;
+  height: $s-size * 10;
+  justify-content: center;
+  align-items: center;
+  font-size: $l-size;
+  outline: $s-size/10 solid $dark-grey;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: scale(0.97) translate3d(0.5px, 0.8px, 0.5px);
+  box-shadow: -1px 1px -7px $dark-grey;
+}
+
+.operator {
+  background: $orange;
+  color: $off-white;
+}
+
+.wide-class {
+  flex-basis: 25%;
+}

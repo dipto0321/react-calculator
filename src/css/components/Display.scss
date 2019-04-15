@@ -1,0 +1,13 @@
+.display {
+  align-items: center;
+  background: $dark-grey;
+  color: $white;
+  display: flex;
+  flex: 1;
+  font-size: $xl-size;
+  font-weight: bold;
+  height: $s-size * 10;
+  justify-content: flex-end;
+  outline: $s-size / 10 solid $light-grey;
+  padding: $l-size;
+}

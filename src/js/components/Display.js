@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Display = () => (
-  <div id="display">
+  <div className="display">
       Display Component Here
   </div>
 );
