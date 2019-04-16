@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'digital-7';
-  src: url('../fonts/digital-7/digital-7.ttf');
+  font-family: "digital-7";
+  src: url("../fonts/digital-7/digital-7.ttf");
 }
 
 .display {
@@ -9,10 +9,11 @@
   color: $white;
   display: flex;
   flex: 1;
-  font-size: $xl-size *2;
-  font-family: 'digital-7';
+  font-size: $xl-size * 2;
+  font-family: "digital-7";
   height: $s-size * 10;
   justify-content: flex-end;
   outline: $s-size / 10 solid $light-grey;
   padding: $l-size;
+  position: relative;
 }
