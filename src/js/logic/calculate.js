@@ -17,6 +17,8 @@ export default (dataObj, btn) => {
       try {
         const res = operate(total, next, operation);
         total = res;
+        operation = btn;
+        next = null;
       } catch (err) {
         error = 'Err';
         next = null;
