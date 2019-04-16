@@ -22,11 +22,11 @@ class App extends Component {
   };
 
   render() {
-    const { total, next, error } = this.state;
+    const { total, next, operation, error, finished } = this.state;
     return (
       <div className="App">
         <div className="container">
-          <Display displayArgs={{ total, next, error }} />
+          <Display displayArgs={{ total, next, operation, error, finished }} />
           <ButtonPanel handleClick={this.handleClick} />
         </div>
       </div>
