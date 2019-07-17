@@ -1,37 +1,49 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 
-class App extends Component {
-  state = {
-    total: null,
-    next: null,
-    operation: null,
-    error: null,
-    finished: false,
-  };
+const App = () => {
+  const [total, setTotal] = useState(null);
+  const [next, setNext] = useState(null);
+  const [operation, setOperation] = useState(null);
+  const [error, setError] = useState(null);
+  const [finished, setFinished] = useState(false);
 
-  handleClick = btn => {
-    this.setState(prevState => {
-      const dataObj = Object.assign(prevState);
-      if (prevState.finished && (!isNaN(btn)|| btn === '.')) dataObj.total = null;
-      if (prevState.error) dataObj.error = null;
-      return calculate(dataObj, btn);
+  const handleClick = (btn) => {
+    setFinished((prevFinished) => {
+      if (prevFinished && (!isNaN(btn) || btn === '.')) {
+        setTotal(null);
+      }
+      if (prevFinished && !isNaN(btn)) {
+        setTotal(btn);
+      }
+      if (error) setError(null);
     });
+
+    const newObj = calculate({
+      total, next, operation, error, finished,
+    }, btn);
+
+    setTotal(newObj.total);
+    setNext(newObj.next);
+    setOperation(newObj.operation);
+    setError(newObj.error);
+    setFinished(newObj.finished);
   };
 
-  render() {
-    const { total, next, operation, error, finished } = this.state;
-    return (
-      <div className="App">
-        <div className="container">
-          <Display displayArgs={{ total, next, operation, error, finished }} />
-          <ButtonPanel handleClick={this.handleClick} />
-        </div>
+  return (
+    <div className="App">
+      <div className="container">
+        <Display displayArgs={{
+          total, next, operation, error, finished,
+        }}
+        />
+        <ButtonPanel handleClick={handleClick} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
+
 
 export default App;
