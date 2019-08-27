@@ -10,8 +10,8 @@ const App = () => {
   const [error, setError] = useState(null);
   const [finished, setFinished] = useState(false);
 
-  const handleClick = (btn) => {
-    setFinished((prevFinished) => {
+  const handleClick = btn => {
+    setFinished(prevFinished => {
       if (prevFinished && (!isNaN(btn) || btn === '.')) {
         setTotal(null);
       }
@@ -21,9 +21,16 @@ const App = () => {
       if (error) setError(null);
     });
 
-    const newObj = calculate({
-      total, next, operation, error, finished,
-    }, btn);
+    const newObj = calculate(
+      {
+        total,
+        next,
+        operation,
+        error,
+        finished,
+      },
+      btn,
+    );
 
     setTotal(newObj.total);
     setNext(newObj.next);
@@ -35,15 +42,19 @@ const App = () => {
   return (
     <div className="App">
       <div className="container">
-        <Display displayArgs={{
-          total, next, operation, error, finished,
-        }}
+        <Display
+          displayArgs={{
+            total,
+            next,
+            operation,
+            error,
+            finished,
+          }}
         />
         <ButtonPanel handleClick={handleClick} />
       </div>
     </div>
   );
 };
-
 
 export default App;
