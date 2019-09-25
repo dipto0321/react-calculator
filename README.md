@@ -4,8 +4,6 @@
 
 > Calculator built using react. [Live demo](https://ryto-react-calculator.netlify.com/)
 
-TODO: Fill out this long description.
-
 ## Table of Contents
 
 - [react-calculator](#react-calculator)
