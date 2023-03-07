@@ -4,11 +4,12 @@
   "private": true,
   "dependencies": {
     "big.js": "^5.2.2",
-    "node-sass": "^8.0.0",
     "prop-types": "^15.7.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "sass": "^1.58.3",
+    "sass-loader": "10.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
